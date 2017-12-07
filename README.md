@@ -35,6 +35,15 @@ In your `bootstrap/app.php` add `$app->register(jDate\Jalali\JalaliServiceProvid
 
 ```
 
+In your `bootstrap/app.php` add `class_alias('jDate\Jalali\jDate', 'jDate');` before  `return $app;`
+
+```php
+    
+    class_alias('jDate\Jalali\jDate', 'jDate');
+    return $app;
+
+```
+
 <a name="basic-usage"></a>
 ## Basic Usage
 ## Examples ##
