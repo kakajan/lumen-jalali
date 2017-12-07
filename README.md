@@ -1,6 +1,8 @@
 kakajan/lumen-jalali
 ======
 
+[![npm](https://img.shields.io/npm/l/express.svg?style=flat-square)](https://github.com/kakajan/lumen-jalali/blob/master/README.md) [![Dockbit](https://img.shields.io/dockbit/DockbitStatus/health.svg?token=TvavttxFHJ4qhnKstDxrvBXM&style=flat-square)](https://github.com/kakajan/lumen-jalali) [![Chrome Web Store](https://img.shields.io/chrome-web-store/price/nimelepbpejjlbmoobocpfnjhihnpked.svg?style=flat-square)](https://github.com/kakajan/lumen-jalali) [![Jenkins tests](https://img.shields.io/jenkins/t/https/jenkins.qa.ubuntu.com/view/Precise/view/All%20Precise/job/precise-desktop-amd64_default.svg?style=flat-square)](https://github.com/kakajan/lumen-jalali/releases/tag/1.0) 
+
 This Package helps developers to easily work with Jalali (Shamsi or Iranian) dates in lumen 5.5+ applications.
 
 <a name="installation"></a>
@@ -9,7 +11,7 @@ This Package helps developers to easily work with Jalali (Shamsi or Iranian) dat
 In the `require` key of `composer.json` file add the following
 
 ```yml
-    "kakajan/lumen-jalali": "dev-master"
+    "kakajan/lumen-jalali": "1.0"
 ```
 
 Run the Composer update comand
@@ -21,13 +23,15 @@ Or just run command
     $ composer require kakajan/lumen-jalali
 
 
-In your `config/app.php` add `'jDate\Jalali\JalaliServiceProvider'` to the end of the `$providers` array
+In your `config/app.php` add `'jDate\Jalali\JalaliServiceProvider::class,'` to the end of the `$providers` array
 
 ```php
     'providers' => array(
-
-        ...
-        jDate\Jalali\JalaliServiceProvider::class,
+    
+    .
+    .
+    .
+    jDate\Jalali\JalaliServiceProvider::class,
 
     ),
 ```
@@ -63,7 +67,7 @@ $date = jDate::forge('last sunday')->format('time'); // 00:00:00
 $date = jDate::forge('2012-10-12')->reforge('+ 3 days')->format('date'); // 1391-07-24
 
 // get relative 'ago' format
-$date = jDate::forge('now - 10 minutes')->ago() // ۱۰ دقیقه پیش
+$date = jDate::forge('now - 10 minutes')->ago(); // ۱۰ دقیقه پیش
 ```
 
 
@@ -76,7 +80,7 @@ For help in building your formats, checkout the [PHP strftime() docs](http://php
 The class relies on ``strtotime()`` to make sense of your strings, and ``strftime()`` to make the format changes.  Just always check the ``time()`` output to see if you get false timestamps... which means the class couldn't understand what you were telling it.
 
 ## License ##
-- This bundle is created based on [lumen-Date](https://github.com/swt83/laravel-date) by [Scott Travis](https://github.com/swt83) (MIT Licensed).  
+- This bundle is created based on [laravel-Date](https://github.com/swt83/laravel-date) by [Scott Travis](https://github.com/swt83) (MIT Licensed).  
 - [Jalali (Shamsi) DateTime](https://github.com/sallar/jDateTime) class included in the package is created by [Sallar Kaboli](http://sallar.me) and is released under the MIT License. 
 - This package was originally created by [Milad Rey](http://milad.io) and is released under the MIT License.
 - Updated for lumen 5.5+ by [kakajn](https://aybook.ir) - https://aykam.org.
