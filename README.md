@@ -23,7 +23,7 @@ Or just run command
     $ composer require kakajan/lumen-jalali
 
 
-In your `bootstrap/app.php` add `$app->register(jDate\Jalali\JalaliServiceProvider::class);` 
+In your `bootstrap/app.php` add `$app->register(jDate\Jalali\JalaliServiceProvider::class);` for registring service provider. 
 
 ```php
     
