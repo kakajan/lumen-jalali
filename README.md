@@ -23,17 +23,16 @@ Or just run command
     $ composer require kakajan/lumen-jalali
 
 
-In your `config/app.php` add `'jDate\Jalali\JalaliServiceProvider::class,'` to the end of the `$providers` array
+In your `bootstrap/app.php` add `$app->register(jDate\Jalali\JalaliServiceProvider::class);` 
 
 ```php
-    'providers' => array(
     
+    $app->register(App\Providers\AppServiceProvider::class);
+    $app->register(App\Providers\AuthServiceProvider::class);
     .
     .
-    .
-    jDate\Jalali\JalaliServiceProvider::class,
+    $app->register(jDate\Jalali\JalaliServiceProvider::class);
 
-    ),
 ```
 
 <a name="basic-usage"></a>
